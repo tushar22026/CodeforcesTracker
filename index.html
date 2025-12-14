@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Tracker</title>
+    <link rel="icon" href="images/img1.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Codeforces <span class="highlight">Tracker</span></h1>
+            <p class="subtitle">Analyze user performance and solve history</p>
+        </header>
+
+        <div class="search-section">
+            <div class="input-group">
+                <input type="text" id="handleInput" placeholder="Enter Codeforces Handle" autocomplete="off">
+                <button id="getInfoBtn">Get Info</button>
+            </div>
+            <p id="errorMsg" class="error-msg hidden"></p>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching data...</p>
+        </div>
+
+        <main id="resultSection" class="hidden">
+            <!-- User Profile Card -->
+            <div class="user-card glass-panel">
+                <div class="profile-header">
+                    <div class="img-wrapper">
+                        <img id="userAvatar" src="" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h2 id="userHandle"></h2>
+                        <p id="userRank" class="rank-badge"></p>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="label">Current Rating</span>
+                        <span id="currentRating" class="value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Max Rating</span>
+                        <span id="maxRating" class="value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Friends of</span>
+                        <span id="friendCount" class="value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Total Solved</span>
+                        <span id="totalSolved" class="value"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solved Problems Table -->
+            <div class="problems-section glass-panel">
+                <h3>Solved Problems</h3>
+                <div class="table-container">
+                    <table id="problemsTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Problem Name</th>
+                                <th>Rating</th>
+                                <th>Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody id="problemsBody">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
