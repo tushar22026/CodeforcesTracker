@@ -150,20 +150,6 @@ button:hover {
     padding-bottom: 25px;
 }
 
-.img-wrapper {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--border-color);
-}
-
-.img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .user-details h2 {
     font-size: 2rem;
     margin-bottom: 5px;
@@ -205,11 +191,13 @@ button:hover {
 /* Problems Table */
 .problems-section {
     animation: fadeInUp 0.6s ease-out 0.2s backwards;
+    margin-top: 30px;
 }
 
 .problems-section h3 {
     margin-bottom: 20px;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .table-container {
@@ -236,6 +224,7 @@ th {
     font-weight: 600;
     color: var(--text-muted);
     font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 td {
@@ -336,4 +325,95 @@ tr:hover td {
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
+}
+
+/* Progression Section */
+.progression-section {
+    margin-bottom: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progression-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progression-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+#ratingTargetSelector {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#ratingTargetSelector:hover,
+
+#ratingTargetSelector:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
+}
+
+#ratingTargetSelector option {
+    background: #1e1e2e;
+    /* Match app background mostly */
+    color: var(--text-main);
+}
+
+#ratingSort {
+    margin-left: 10px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#ratingSort:hover,
+
+#ratingSort:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
+    color: var(--text-main);
+}
+
+#ratingSort option {
+    background: #1e1e2e;
+    color: var(--text-main);
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    /* Constrain size for Pie Chart */
+    margin: 0 auto;
+}
+
+.progression-stats {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
 }

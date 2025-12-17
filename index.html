@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -34,9 +35,6 @@
             <!-- User Profile Card -->
             <div class="user-card glass-panel">
                 <div class="profile-header">
-                    <div class="img-wrapper">
-                        <img id="userAvatar" src="" alt="User Avatar">
-                    </div>
                     <div class="user-details">
                         <h2 id="userHandle"></h2>
                         <p id="userRank" class="rank-badge"></p>
@@ -63,6 +61,32 @@
                 </div>
             </div>
 
+            <!-- Rating Progression Section -->
+            <div class="progression-section glass-panel">
+                <div class="progression-header">
+                    <h3>Rating Progression</h3>
+                    <select id="ratingTargetSelector">
+                        <option value="800">800 - Newbie</option>
+                        <option value="900">900 - Newbie</option>
+                        <option value="1000">1000 - Newbie</option>
+                        <option value="1100">1100 - Newbie</option>
+                        <option value="1200">1200 - Pupil</option>
+                        <option value="1300">1300 - Pupil</option>
+                        <option value="1400">1400 - Specialist</option>
+                        <option value="1500">1500 - Specialist</option>
+                        <option value="1600">1600 - Expert</option>
+                        <option value="1700">1700 - Expert</option>
+                        <option value="1900">1900 - Candidate Master</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="progressionChart"></canvas>
+                </div>
+                <div id="progressionStats" class="progression-stats">
+                    <!-- Stats injected by JS -->
+                </div>
+            </div>
+
             <!-- Solved Problems Table -->
             <div class="problems-section glass-panel">
                 <h3>Solved Problems</h3>
@@ -72,7 +96,13 @@
                             <tr>
                                 <th>#</th>
                                 <th>Problem Name</th>
-                                <th>Rating</th>
+                                <th>
+                                    Rating
+                                    <select id="ratingSort">
+                                        <option value="asc">Ascending</option>
+                                        <option value="desc">Descending</option>
+                                    </select>
+                                </th>
                                 <th>Tags</th>
                             </tr>
                         </thead>
